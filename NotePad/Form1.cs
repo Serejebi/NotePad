@@ -16,6 +16,7 @@ namespace NotePad
 
 
         string fileName;
+        bool saveFile = true;
         public Form1()
         {
             InitializeComponent();
@@ -48,6 +49,32 @@ namespace NotePad
         {
             fileName = null;
             save_Click(null, null);
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(saveFile == false)
+            {
+
+                DialogResult result;
+                result= MessageBox.Show("Do you want save file" ,"save",MessageBoxButtons.OKCancel);
+                if(result == DialogResult.OK)
+                {
+                    save_Click(null,null);
+                }
+
+                Body.Text = "";
+                this.Text= fileName;
+                saveFile = true;
+                fileName = null;
+
+
+            }
+        }
+
+        private void Body_TextChanged(object sender, EventArgs e)
+        {
+            saveFile = false;
         }
     }
 }

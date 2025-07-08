@@ -81,7 +81,7 @@
             this.Body.Size = new System.Drawing.Size(835, 467);
             this.Body.TabIndex = 0;
             this.Body.WordWrap = false;
-            
+            this.Body.TextChanged += new System.EventHandler(this.Body_TextChanged);
             // 
             // fileToolStripMenuItem
             // 
@@ -99,7 +99,6 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 25);
             this.fileToolStripMenuItem.Text = "&File";
-           
             // 
             // newToolStripMenuItem
             // 
@@ -109,6 +108,7 @@
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.newToolStripMenuItem.Text = "&New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
@@ -331,7 +331,6 @@
             this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
             this.formatToolStripMenuItem.Size = new System.Drawing.Size(72, 25);
             this.formatToolStripMenuItem.Text = "&Format";
-            
             // 
             // backColorToolStripMenuItem
             // 
